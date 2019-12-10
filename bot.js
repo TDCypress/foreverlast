@@ -7,10 +7,10 @@ client.on("message", message => {
                          if (!message.member.hasPermission("ADMINISTRATOR"))  return message.channel.send("u dont have premission");
   let args = message.content.split(" ").slice(1);
   var argresult = args.join(' '); 
-  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
+  message.guild.members.filter(m => m.presence.status !== '').forEach(m => {
  m.send(`${argresult}\n ${m}`);
 })
- message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : message send to`); 
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== '').size}\` : message send to`); 
  message.delete(); 
 };     
 });
